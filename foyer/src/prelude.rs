@@ -12,6 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#[cfg(feature = "opendal")]
+#[cfg_attr(docsrs, doc(cfg(feature = "opendal")))]
+pub use foyer_opendal::OpenDalEngineConfig;
+
 #[cfg(feature = "tracing")]
 pub use crate::common::tracing::TracingOptions;
 #[cfg(target_os = "linux")]
@@ -38,9 +42,9 @@ pub use crate::{
     storage::{
         AdmitAll, Block, BlockEngineConfig, BlockStatistics, CombinedDeviceBuilder, Compression, Device, DeviceBuilder,
         Engine, EngineBuildContext, EngineConfig, EstimatedSize, EvictionInfo, EvictionPicker, FifoPicker,
-        FileDeviceBuilder, FsDeviceBuilder, InvalidRatioPicker, IoEngine, IoEngineConfig, IoHandle, IopsCounter, Load,
-        NoopDeviceBuilder, NoopIoEngine, NoopIoEngineConfig, PartialDeviceBuilder, PieceRef, PsyncIoEngine,
-        PsyncIoEngineConfig, RawFile, RecoverMode, RejectAll, Statistics, StorageFilter, StorageFilterCondition,
-        StorageFilterResult, Store, StoreBuilder, Throttle,
+        FileDeviceBuilder, FsDeviceBuilder, InvalidRatioPicker, IoEngine, IoEngineBuildContext, IoEngineConfig,
+        IoHandle, IopsCounter, Load, NoopDeviceBuilder, NoopIoEngine, NoopIoEngineConfig, PartialDeviceBuilder,
+        PieceRef, PsyncIoEngine, PsyncIoEngineConfig, RawFile, RecoverMode, RejectAll, Statistics, StorageFilter,
+        StorageFilterCondition, StorageFilterResult, Store, StoreBuilder, Throttle,
     },
 };
